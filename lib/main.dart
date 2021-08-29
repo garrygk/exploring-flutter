@@ -1,31 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:myflutterapp/screens/home_screen.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: Home(),
-  ));
-}
+void main() => runApp(MyApp());
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: Image(
-          image: AssetImage('assets/mando.jpg'),
-        ),
+    return MaterialApp(
+      title: "Chat UI",
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primaryColor: Colors.red,
+        accentColor: Color(0xFFFEF9EB),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: (){
-        },
-        child: Icon(
-          Icons.add,
-          size: 40,
-        ),
-        backgroundColor: Colors.purpleAccent.shade200,
-      ),
+      home: HomeScreen(),
     );
   }
 }
